@@ -37,8 +37,6 @@
 
 <script>
 	var prov = new L.LayerGroup();
-	var faskes = new L.LayerGroup();
-	var puskesmas = new L.LayerGroup();
 	var sungai = new L.LayerGroup();
 	var provin = new L.LayerGroup();
 	var kuliner = new L.LayerGroup();
@@ -87,8 +85,6 @@
 			"Provinsi": provin
 		},
 		"Peta Khusus": {
-			"Fasilitas Kesehatan": faskes,
-			"Puskesmas": puskesmas,
 			"Kuliner": kuliner 
 		}
 	};
@@ -202,53 +198,7 @@
 		}).addTo(prov);
 	});
 
-	$.getJSON("<?= base_url() ?>assets/rsu.geojson", function(data) {
-		var ratIcon = L.icon({
-			iconUrl: '<?= base_url() ?>assets/rsu-marker.png',
-			iconSize: [12, 10]
-		});
-		L.geoJson(data, {
-			pointToLayer: function(feature, latlng) {
-				var marker = L.marker(latlng, {
-					icon: ratIcon
-				});
-				marker.bindPopup(feature.properties.NAMOBJ);
-				return marker;
-			}
-		}).addTo(faskes);
-	});
-
-	$.getJSON("<?= base_url() ?>assets/poliklinik.geojson", function(data) {
-		var ratIcon = L.icon({
-			iconUrl: '<?= base_url() ?>assets/poliklinik-marker.png',
-			iconSize: [12, 10]
-		});
-		L.geoJson(data, {
-			pointToLayer: function(feature, latlng) {
-				var marker = L.marker(latlng, {
-					icon: ratIcon
-				});
-				marker.bindPopup(feature.properties.NAMOBJ);
-				return marker;
-			}
-		}).addTo(faskes);
-	});
-
-	$.getJSON("<?= base_url() ?>assets/puskesmas.geojson", function(data) {
-		var ratIcon = L.icon({
-			iconUrl: '<?= base_url() ?>assets/puskesmas-marker.png',
-			iconSize: [12, 10]
-		});
-		L.geoJson(data, {
-			pointToLayer: function(feature, latlng) {
-				var marker = L.marker(latlng, {
-					icon: ratIcon
-				});
-				marker.bindPopup(feature.properties.NAMOBJ);
-				return marker;
-			}
-		}).addTo(puskesmas);
-	});
+	
 
 	$.getJSON("<?= base_url() ?>/assets/sungai.geojson", function(kode) {
 		L.geoJson(kode, {
@@ -312,15 +262,20 @@
 
 	$.getJSON("<?= base_url() ?>assets/kuliner_amb.geojson", function(data) {
 		var ratIcon = L.icon({
-			iconUrl: '<?= base_url() ?>assets/marker-1.png',
-			iconSize: [12, 15]
+			iconUrl: '<?= base_url() ?>assets/marker-kuliner.png',
+			iconSize: [25, 30]
 		});
 		L.geoJson(data, {
 			pointToLayer: function(feature, latlng) {
 				var marker = L.marker(latlng, {
 					icon: ratIcon
 				});
-				marker.bindPopup(feature.properties.NAMA);
+				let popupinfo = `
+					<p style="margin-bottom:0;margin-top:0;">Nama : ${feature.properties.NAMA}</p>
+					<p style="margin-bottom:0;margin-top:0;">Jenis : ${feature.properties.jenis_jualan} </p>
+					<p style="margin-bottom:0;margin-top:0;">Harga : Rp. ${feature.properties.harga} </p>
+					`
+				marker.bindPopup(popupinfo);
 				return marker;
 			}
 		}).addTo(kuliner);

@@ -54,7 +54,7 @@
 					<li><a href="#map-wrapper" class="page-scroll">Map</a></li>
 					<!-- <li><a href="#restaurant-menu" class="page-scroll">Menu</a></li> -->
 					<li><a href="#warung" class="page-scroll">Warung</a></li>
-					<!-- <li><a href="#team" class="page-scroll">Chefs</a></li> -->
+					<li><a href="#team" class="page-scroll">Profile</a></li>
 					<!-- <li><a href="#call-reservation" class="page-scroll">Contact</a></li> -->
 				</ul>
 			</div>
@@ -239,16 +239,16 @@
 	<!-- Portfolio Section -->
 
 	<!-- Team Section -->
-	<!-- <div id="team" class="text-center">
+	<div id="team" class="text-center">
 		<div class="overlay">
 			<div class="container">
 				<div class="col-md-10 col-md-offset-1 section-title">
-					<h2>Meet Our Chefs</h2>
+					<h2>Developer Profile</h2>
 					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+					<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p> -->
 				</div>
 				<div id="row">
-					<div class="col-md-4 team">
+					<!-- <div class="col-md-4 team">
 						<div class="thumbnail">
 							<div class="team-img"><img src="<?= base_url() ?>assets/template/img/team/01.jpg" alt="..."></div>
 							<div class="caption">
@@ -256,17 +256,17 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-4 team">
+					</div> -->
+					<div class="col-md-12 team" style="margin: 0 auto;">
 						<div class="thumbnail">
 							<div class="team-img"><img src="<?= base_url() ?>assets/template/img/team/02.jpg" alt="..."></div>
 							<div class="caption">
-								<h3>Chris Doe</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
+								<h3>Ahmad Qorthoni Nur Ardhi</h3>
+								<p>Mahasiswa Sistem Informasi Uin Syarif Hidayatullah</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 team">
+					<!-- <div class="col-md-4 team">
 						<div class="thumbnail">
 							<div class="team-img"><img src="<?= base_url() ?>assets/template/img/team/03.jpg" alt="..."></div>
 							<div class="caption">
@@ -274,11 +274,11 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- Call Reservation Section -->
 	<!-- <div id="call-reservation" class="text-center">
 		<div class="container">
